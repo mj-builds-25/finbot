@@ -1,0 +1,23 @@
+[project]
+name = "finbot"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "docling>=2.82.0",
+    "fastapi>=0.135.2",
+    "fastembed>=0.8.0",
+    "httpx>=0.28.1",
+    "langchain>=1.2.13",
+    "langchain-community>=0.4.1",
+    "langchain-openai>=1.1.12",
+    "pandas>=3.0.1",
+    "pydantic>=2.12.5",
+    "pytest>=9.0.2",
+    "python-dotenv>=1.2.2",
+    "qdrant-client>=1.17.1",
+    "ragas>=0.4.3",
+    "semantic-router>=0.1.12",
+    "uvicorn[standard]>=0.42.0",
+]
