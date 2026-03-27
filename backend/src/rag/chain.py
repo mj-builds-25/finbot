@@ -15,6 +15,9 @@ The FastAPI routes call run_rag_chain() and return the result.
 import logging
 from dataclasses import dataclass, field
 
+from src.guardrails.input_guards import run_input_guards, InputGuardResult
+from src.guardrails.output_guards import run_output_guards
+
 from langchain_openai import ChatOpenAI
 from langchain_core.messages import SystemMessage, HumanMessage
 
@@ -40,6 +43,8 @@ class RAGResponse:
     chunks_retrieved: int                # How many chunks fed to LLM
     allowed: bool                        # Was access granted?
     denial_message: str | None = None    # If denied, the message
+    input_blocked: bool = False          # Was input blocked by guardrails?
+    output_warnings: list[str] = field(default_factory=list)  # Output warnings
 
 
 def _get_llm() -> ChatOpenAI:
@@ -97,6 +102,23 @@ def run_rag_chain(
         RAGResponse with answer, sources, and metadata
     """
     logger.info(f"RAG chain | role={role} | query='{query[:60]}...'")
+
+    # ── Step 0: Input guardrails ────────────────────────────
+    guard_result = run_input_guards(query=query, session_id=role)
+
+    if not guard_result.allowed:
+        logger.info(f"  Input blocked by: {guard_result.blocked_by}")
+        return RAGResponse(
+            answer=guard_result.message,
+            sources=[],
+            route="blocked",
+            route_score=0.0,
+            collections_searched=[],
+            chunks_retrieved=0,
+            allowed=False,
+            denial_message=guard_result.message,
+            input_blocked=True,
+        )
 
     # ── Step 1: Route the query ──────────────────────────────
     decision: RoutingDecision = route_query(query, role)
@@ -162,13 +184,20 @@ def run_rag_chain(
 
     logger.info(f"  Answer generated ({len(answer)} chars)")
 
-    # ── Step 6: Build response ───────────────────────────────
-    return RAGResponse(
+    # ── Step 6: Output guardrails ────────────────────────────
+    output_result = run_output_guards(
         answer=answer,
+        retrieved_chunks=results,
+    )
+
+    # ── Step 7: Build final response ─────────────────────────
+    return RAGResponse(
+        answer=output_result.answer,
         sources=_build_sources(results),
         route=decision.route.value,
         route_score=decision.route_score,
         collections_searched=decision.collections_to_search,
         chunks_retrieved=len(results),
         allowed=True,
+        output_warnings=output_result.warnings,
     )
