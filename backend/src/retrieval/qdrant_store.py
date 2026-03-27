@@ -68,8 +68,33 @@ def create_collection_if_not_exists(client: QdrantClient) -> bool:
         ),
     )
     logger.info(f"✅ Collection '{COLLECTION_NAME}' created successfully")
+    create_payload_indexes(client)
     return True
 
+def create_payload_indexes(client: QdrantClient) -> None:
+    """
+    Creates keyword indexes on payload fields used for filtering.
+
+    Qdrant requires explicit indexes on fields used in query filters.
+    Without this, filtered searches return a 400 Bad Request error.
+
+    Fields indexed:
+        access_roles — used for RBAC filter on every query
+        collection   — used for router-targeted collection search
+    """
+    from qdrant_client.models import PayloadSchemaType
+
+    for field in ["access_roles", "collection"]:
+        try:
+            client.create_payload_index(
+                collection_name=COLLECTION_NAME,
+                field_name=field,
+                field_schema=PayloadSchemaType.KEYWORD,
+            )
+            logger.info(f"✅ Payload index created: '{field}'")
+        except Exception as e:
+            # Index may already exist — that's fine
+            logger.info(f"  Index '{field}' already exists or skipped: {e}")
 
 def verify_connection(client: QdrantClient) -> dict:
     """
