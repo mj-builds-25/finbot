@@ -1,0 +1,22 @@
+{
+  "1_baseline": {
+    "label": "Baseline RAG (no routing, no guardrails)",
+    "scores": {
+      "faithfulness": 0.7,
+      "context_precision": 0.6,
+      "context_recall": 0.8,
+      "error": ""
+    },
+    "samples_evaluated": 5
+  },
+  "2_full_system": {
+    "label": "Full System (routing + RBAC + guardrails)",
+    "scores": {
+      "faithfulness": 0.6,
+      "context_precision": 0.5,
+      "context_recall": 0.7,
+      "error": ""
+    },
+    "samples_evaluated": 1
+  }
+}

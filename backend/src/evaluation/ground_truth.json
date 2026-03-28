@@ -1,0 +1,242 @@
+[
+  {
+    "question": "What is FinSolve's standard hybrid work arrangement?",
+    "ground_truth": "3 days office and 2 days remote per week, with core hours of 10 AM to 4 PM IST mandatory for all employees regardless of location.",
+    "collection": "general",
+    "role": "employee"
+  },
+  {
+    "question": "How many privilege leave days are employees entitled to per year?",
+    "ground_truth": "Employees are entitled to 15 to 21 days of privilege leave per year, accrued monthly, with up to 10 days carry-forward allowed.",
+    "collection": "general",
+    "role": "employee"
+  },
+  {
+    "question": "What is the expected Slack response time during core hours?",
+    "ground_truth": "All team members are expected to respond to Slack messages within 30 minutes during core hours of 10 AM to 4 PM IST.",
+    "collection": "general",
+    "role": "employee"
+  },
+  {
+    "question": "What is the employee referral bonus range at FinSolve?",
+    "ground_truth": "The referral bonus ranges from Rs 10,000 for junior roles to Rs 50,000 for senior or specialized roles, paid after the new hire completes 6 months.",
+    "collection": "general",
+    "role": "employee"
+  },
+  {
+    "question": "What is the notice period for manager-level employees?",
+    "ground_truth": "The notice period for manager-level and above employees is 90 days.",
+    "collection": "general",
+    "role": "employee"
+  },
+  {
+    "question": "What monthly gym subsidy does FinSolve provide?",
+    "ground_truth": "FinSolve subsidizes gym membership up to Rs 2,000 per month for employees.",
+    "collection": "general",
+    "role": "employee"
+  },
+  {
+    "question": "How many paid CSR volunteer days does FinSolve provide annually?",
+    "ground_truth": "FinSolve provides 2 paid CSR volunteer days per year, which do not count against the annual leave balance.",
+    "collection": "general",
+    "role": "employee"
+  },
+  {
+    "question": "What is the annual tuition reimbursement limit per employee?",
+    "ground_truth": "Up to Rs 50,000 per year per employee for job-relevant courses and certifications, subject to manager and HR approval.",
+    "collection": "general",
+    "role": "employee"
+  },
+  {
+    "question": "What is the IT ticket response time for a Critical priority issue?",
+    "ground_truth": "Critical priority IT tickets receive a response within 30 minutes and resolution within 4 hours.",
+    "collection": "general",
+    "role": "employee"
+  },
+  {
+    "question": "What is the non-compete restriction period for senior roles at FinSolve?",
+    "ground_truth": "The non-compete restriction period is 12 months post-employment for senior roles handling confidential technology or client relationships.",
+    "collection": "general",
+    "role": "employee"
+  },
+  {
+    "question": "What was FinSolve's average sprint velocity in Q4 2024?",
+    "ground_truth": "The average sprint velocity in Q4 2024 was 219 story points per sprint, with individual sprints ranging from 209 to 228 points.",
+    "collection": "engineering",
+    "role": "engineering"
+  },
+  {
+    "question": "What was the root cause of incident INC-2024-004, the P0 payment gateway outage?",
+    "ground_truth": "A third-party payment gateway API schema change was not communicated to FinSolve. The issue was resolved by reverting to the previous adapter version and coordinating with the vendor.",
+    "collection": "engineering",
+    "role": "engineering"
+  },
+  {
+    "question": "What was the Payment Service uptime target and actual uptime in 2024?",
+    "ground_truth": "The Payment Service had a target uptime of 99.99% and achieved 99.989% actual uptime in 2024.",
+    "collection": "engineering",
+    "role": "engineering"
+  },
+  {
+    "question": "What databases does FinSolve use in its data layer?",
+    "ground_truth": "FinSolve uses PostgreSQL for transactional data, MongoDB for user profiles and metadata, Redis for caching and session management, and Amazon S3 for documents and backups.",
+    "collection": "engineering",
+    "role": "engineering"
+  },
+  {
+    "question": "How did the engineering team completion rate improve from Q1 to Q4 2024?",
+    "ground_truth": "The completion rate improved from 91.9% in Q1 to 99.1% in Q4 2024, an improvement of 7.2 percentage points.",
+    "collection": "engineering",
+    "role": "engineering"
+  },
+  {
+    "question": "How many total incidents were recorded in 2024 and how were they distributed by severity?",
+    "ground_truth": "18 incidents were recorded in 2024: 3 P0 critical, 5 P1 high, 6 P2 medium, and 4 P3 low severity incidents.",
+    "collection": "engineering",
+    "role": "engineering"
+  },
+  {
+    "question": "What deployment strategy does FinSolve use for standard production releases?",
+    "ground_truth": "FinSolve uses Blue-Green deployment for standard releases, with 38 of 52 production deployments using this strategy. Canary deployment (10% to 50% to 100%) was used for 12 deployments.",
+    "collection": "engineering",
+    "role": "engineering"
+  },
+  {
+    "question": "What is the API Gateway P95 latency SLA target?",
+    "ground_truth": "The API Gateway P95 latency SLA target is 50 milliseconds.",
+    "collection": "engineering",
+    "role": "engineering"
+  },
+  {
+    "question": "What was the engineering team test coverage at end of Q4 2024?",
+    "ground_truth": "Test coverage reached 85% at the end of Q4 2024, meeting the target of 85% or higher.",
+    "collection": "engineering",
+    "role": "engineering"
+  },
+  {
+    "question": "What was the root cause of the P0 data pipeline incident INC-2024-011?",
+    "ground_truth": "An ETL job logic error in a schema migration ran without data validation, causing analytics data corruption. It was resolved by restoring from backup with a 15-minute RPO and implementing pre-migration validation checks.",
+    "collection": "engineering",
+    "role": "engineering"
+  },
+  {
+    "question": "What was FinSolve's total revenue in FY2024?",
+    "ground_truth": "FinSolve achieved total revenue of Rs 783 Crore, approximately 94 million USD, representing 28.2% year-over-year growth from Rs 611 Crore in FY2023.",
+    "collection": "finance",
+    "role": "finance"
+  },
+  {
+    "question": "What was FinSolve's net income and net margin for FY2024?",
+    "ground_truth": "FinSolve's net income was Rs 96 Crore with a net margin of 12.3% for FY2024.",
+    "collection": "finance",
+    "role": "finance"
+  },
+  {
+    "question": "Which vendor received the highest payment in 2024 and how much?",
+    "ground_truth": "Amazon Web Services India received the highest vendor payment of Rs 10,700 Lakh, representing 42.8% of total vendor spend.",
+    "collection": "finance",
+    "role": "finance"
+  },
+  {
+    "question": "What was the total vendor spend in 2024 and how many vendors were active?",
+    "ground_truth": "Total vendor spend was Rs 240 Crore across 28 active vendors, with a 94% on-time payment rate and zero payment disputes.",
+    "collection": "finance",
+    "role": "finance"
+  },
+  {
+    "question": "What was the Technology department's total budget and actual spend in 2024?",
+    "ground_truth": "The Technology department had a budget of Rs 7,500 Lakh and actual spend of Rs 7,515 Lakh, a Rs 15 Lakh unfavorable variance of 0.2%.",
+    "collection": "finance",
+    "role": "finance"
+  },
+  {
+    "question": "What was FinSolve's EBITDA for FY2024 compared to FY2023?",
+    "ground_truth": "EBITDA was Rs 138 Crore at a 17.6% margin in FY2024, up 142.1% from Rs 57 Crore in FY2023.",
+    "collection": "finance",
+    "role": "finance"
+  },
+  {
+    "question": "What was FinSolve's operating cash flow in 2024?",
+    "ground_truth": "FinSolve's operating cash flow was Rs 187 Crore, representing 23.9% of total revenue in 2024.",
+    "collection": "finance",
+    "role": "finance"
+  },
+  {
+    "question": "What was the on-time payment rate for vendors in 2024?",
+    "ground_truth": "The on-time payment rate for vendors was 94% in 2024, with zero payment disputes recorded throughout the year.",
+    "collection": "finance",
+    "role": "finance"
+  },
+  {
+    "question": "What was FinSolve's revenue in Q1 2024?",
+    "ground_truth": "FinSolve's revenue in Q1 2024 was Rs 183 Crore, representing 22% year-over-year growth, with a gross profit of Rs 114 Crore at a 62.3% margin.",
+    "collection": "finance",
+    "role": "finance"
+  },
+  {
+    "question": "What is the vendor concentration risk level for the top 3 vendors?",
+    "ground_truth": "The top 3 vendors represent Rs 17,800 Lakh or 71.2% of total vendor spend, classified as high concentration risk.",
+    "collection": "finance",
+    "role": "finance"
+  },
+  {
+    "question": "How many new customers did FinSolve acquire in total in 2024?",
+    "ground_truth": "FinSolve acquired 685,100 new customers in 2024, a 19.9% year-over-year increase from 571,200 in 2023.",
+    "collection": "marketing",
+    "role": "marketing"
+  },
+  {
+    "question": "What was the average marketing ROI across all campaigns in 2024?",
+    "ground_truth": "The average marketing ROI across all campaigns in 2024 was 3.14x, up from 2.53x in 2023, a 24.1% improvement.",
+    "collection": "marketing",
+    "role": "marketing"
+  },
+  {
+    "question": "Which 2024 campaign had the highest ROI?",
+    "ground_truth": "The Video Content Year-End Review campaign in Q4 had the highest ROI of 4.58x on a budget of Rs 42 Lakh.",
+    "collection": "marketing",
+    "role": "marketing"
+  },
+  {
+    "question": "What was the total marketing spend in 2024?",
+    "ground_truth": "Total marketing spend in 2024 was Rs 1,330 Lakh, an 18.2% increase over Rs 1,125 Lakh in 2023.",
+    "collection": "marketing",
+    "role": "marketing"
+  },
+  {
+    "question": "What was the Customer Acquisition Cost in Q1 2024?",
+    "ground_truth": "The Customer Acquisition Cost in Q1 2024 was Rs 1,681 per customer, beating the target of Rs 1,800 by 6.6%.",
+    "collection": "marketing",
+    "role": "marketing"
+  },
+  {
+    "question": "How many new customers did FinSolve acquire in Q2 2024?",
+    "ground_truth": "FinSolve acquired 162,800 new customers in Q2 2024, a 9.5% quarter-over-quarter increase, with marketing spend of Rs 28 Crore.",
+    "collection": "marketing",
+    "role": "marketing"
+  },
+  {
+    "question": "What was the 12-month customer retention rate in 2024?",
+    "ground_truth": "The 12-month customer retention rate was 84.3% in 2024, up from 79.8% in 2023.",
+    "collection": "marketing",
+    "role": "marketing"
+  },
+  {
+    "question": "What was the annual customer churn rate in 2024?",
+    "ground_truth": "The annual customer churn rate was 9.7% in 2024, down from 12.1% in 2023.",
+    "collection": "marketing",
+    "role": "marketing"
+  },
+  {
+    "question": "Which European market experienced regulatory delays in Q1 2024?",
+    "ground_truth": "France experienced regulatory approval delays in Q1 2024, causing slower adoption and underperformance versus targets. Recommendations included increasing influencer partnerships from 3 to 8.",
+    "collection": "marketing",
+    "role": "marketing"
+  },
+  {
+    "question": "What were the budget and ROI of the InstantPay launch campaign in Q1 2024?",
+    "ground_truth": "The InstantPay launch campaign had a budget of Rs 52 Lakh and achieved an ROI of 3.36x, the highest among all Q1 campaigns, generating 52,100 new feature sign-ups.",
+    "collection": "marketing",
+    "role": "marketing"
+  }
+]
