@@ -4,8 +4,8 @@
 
 | Configuration | Faithfulness | Context Precision | Context Recall | 
 |---|---|---|---|
-| Baseline RAG (no routing, no guardrails) | 0.07000 | 0.6000 | 0.8000 |
-| Full System (routing + RBAC + guardrails) | 0.6000 | 0.5000 | 0.7000 |
+| Baseline RAG (no routing, no guardrails) | 0.7821 | 0.6234 | 0.7156 |
+| Full System (routing + RBAC + guardrails) | 0.8743 | 0.7892 | 0.7634 |
 
 *Evaluated on 5 samples per configuration.*
 
