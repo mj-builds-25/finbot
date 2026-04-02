@@ -2,7 +2,7 @@
 
 > Production-grade internal Q&A assistant with Role-Based Access Control,
 > semantic routing, guardrails, and automated RAGAs evaluation.
-> Built as part of the Codebasics AI Engineering Bootcamp.
+
 
 ---
 
