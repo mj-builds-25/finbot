@@ -1,26 +1,62 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html, body {
+  height: 100%;
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #f0ede8;
 }
+
+/* Soft scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d4cfc8; border-radius: 4px; }
+
+/* Neumorphism card */
+.neu-card {
+  background: #f0ede8;
+  box-shadow: 6px 6px 14px #d4d0cb, -6px -6px 14px #ffffff;
+  border-radius: 20px;
+}
+
+.neu-inset {
+  background: #f0ede8;
+  box-shadow: inset 3px 3px 8px #d4d0cb, inset -3px -3px 8px #ffffff;
+  border-radius: 14px;
+}
+
+.neu-button {
+  background: #f0ede8;
+  box-shadow: 4px 4px 10px #d4d0cb, -4px -4px 10px #ffffff;
+  border-radius: 12px;
+  transition: all 0.15s ease;
+}
+
+.neu-button:hover {
+  box-shadow: 2px 2px 6px #d4d0cb, -2px -2px 6px #ffffff;
+}
+
+.neu-button:active {
+  box-shadow: inset 2px 2px 6px #d4d0cb, inset -2px -2px 6px #ffffff;
+}
+
+/* Blob animation */
+@keyframes blob-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(20px, -15px) scale(1.04); }
+  66% { transform: translate(-10px, 12px) scale(0.97); }
+}
+
+.blob { animation: blob-drift 10s ease-in-out infinite; }
+.blob-2 { animation: blob-drift 13s ease-in-out infinite reverse; }
+.blob-3 { animation: blob-drift 16s ease-in-out infinite 3s; }
